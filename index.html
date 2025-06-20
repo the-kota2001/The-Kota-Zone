@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Kota Zone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: gold;
+      padding: 1rem;
+    }
+    h1, h2 {
+      text-align: center;
+      text-shadow: 0 0 8px gold;
+    }
+    .menu-item {
+      background: #111;
+      margin: 1rem auto;
+      padding: 1rem;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+    .price {
+      float: right;
+      color: #FFD700;
+      font-weight: bold;
+    }
+    .btn {
+      background-color: gold;
+      color: black;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+    }
+    .contact a {
+      display: block;
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0.5rem 0;
+    }
+  </style>
+  <script>
+    function orderItem(name, price) {
+      const type = prompt("Choose: 1 for Pick and Pay, 2 for Cash on Delivery");
+      if (type === "1") {
+        alert("Order for '" + name + "' confirmed. Pay R" + price + " at pickup.");
+      } else if (type === "2") {
+        const deliveryFee = 10;
+        const total = parseFloat(price) + deliveryFee;
+        alert("Order for '" + name + "' confirmed with delivery. Total: R" + total);
+      } else {
+        alert("Order cancelled.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>The Kota Zone</h1>
+  <h2>A Taste Above. The Standard Redefined.</h2>
+
+  <div class="menu-item">Vienna <span class="price">R20</span><br><button class="btn" onclick="orderItem('Vienna', 20)">Order Now</button></div>
+  <div class="menu-item">Chips - Medium <span class="price">R25</span><br><button class="btn" onclick="orderItem('Chips Medium', 25)">Order Now</button></div>
+  <div class="menu-item">Chips - Large <span class="price">R30</span><br><button class="btn" onclick="orderItem('Chips Large', 30)">Order Now</button></div>
+  <div class="menu-item">Chips & Russian <span class="price">R35</span><br><button class="btn" onclick="orderItem('Chips & Russian', 35)">Order Now</button></div>
+
+  <footer>
+    <div class="contact">
+      <a href="tel:0780512838">📞 Call Us: 0780512838</a>
+      <a href="https://wa.me/27723386885" target="_blank">💬 WhatsApp: 0723386885</a>
+      <a href="gallery.html">📸 Visit Our Gallery</a>
+    </div>
+  </footer>
+</body>
+</html>
